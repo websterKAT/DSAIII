@@ -10,10 +10,24 @@ def knapsack(W,wt,val,n):
 			else:
 				k[i][w] = k[i-1][w]
 
-	return k[n][W]
+	print(k[n][W])
+	row = n
+	column = W
+	while(row != 1 and column != 1):
+		if k[row][column] != k[row-1][column]:
+			print("item:"+str(row)),
+			print("weight: "+str(wt[row-1])),
+			print(" Value: " +str(val[row-1]))
+			row -= 1
+			column -= wt[row-1]
+		else:
+			row -= 1
 
-val = [60,100,120]
-wt = [10,20,30]
-W = 50
+
+
+val = [1,4,5,7] #should be enter in increasing order
+wt = [1,3,4,5]
+W = 7
 n = len(val)
-print(knapsack(W,wt,val,n))
+
+knapsack(W,wt,val,n)
