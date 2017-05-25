@@ -30,7 +30,7 @@ class kmp {
 		int i = 1;
 		lps[0] = 0;
 		while(i < m){
-			if(pat.charAt(i) == pat.charAt(len)){
+			if(pat.charAt(i) == pat.	charAt(len)){
 				len++;
 				lps[i] = len;
 				i++;
