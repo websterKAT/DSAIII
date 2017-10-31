@@ -1,3 +1,4 @@
+#Dynamic Programing added
 memo = {}
 def fib(n):
 	if n in memo:
@@ -5,9 +6,13 @@ def fib(n):
 	elif(n) <= 2:
 		f = 1
 	else:
-		f = fib(n-1) + fib(n-2)
+		f = fib(n-2) + fib(n-1)
+	if(len(memo) > 100):
+		del memo[0]
 	memo[n] = f
-	print memo
+	print(memo)
 	return f
 
 print(fib(10))
+
+
