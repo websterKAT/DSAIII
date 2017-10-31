@@ -10,6 +10,7 @@ void search(char *pat,char *txt){
 			if(txt[i+j] != pat[j])
 				break;
 		}
+	//check whether the pattern was found
 		if(j == M){
 			printf("Pattern found at: %d\n",i);
 		}
@@ -20,8 +21,13 @@ void search(char *pat,char *txt){
 }	
 int main()
 {
-	char txt[] = "AABAACAADAABAAAABAA";
+	char txt[] = "AABAACAADAABAAAABAA"; 
 	char pat[] = "AABA";
+	search(pat,txt);
+
+	//test 2
+	char txt2[] = "AAAAAAAA";
+	char pat2[] = "AAA";
 	search(pat,txt);
 	return 0;
 }
